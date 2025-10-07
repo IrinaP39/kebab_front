@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Blog.scss';
+import { useEffect, useState } from 'react';
 import img1 from '../../assets/blog_img/blog-img-2-1.jpg';
 import img2 from '../../assets/blog_img/blog-img-2-2.jpg';
 import img3 from '../../assets/blog_img/blog-img-2-3.jpg';
@@ -70,8 +71,18 @@ const BlogCard = ({ blog }) => (
         </div>
     </div>
 );
-
 const Blog = () => {
+    /*const [blogs, setBlogs] = useState([]);
+    useEffect(() => {
+        fetch('/api/blog')
+            .then(res => res.json()
+                .then(data => setBlogs(data))
+                .catch(err => console.error('Error fetching blog posts:', err))
+            )
+    }, []);
+}*/
+
+
     return (
         <section className="blog">
             <BlogHeader />
@@ -86,6 +97,5 @@ const Blog = () => {
             </div>
         </section>
     );
-};
-
+}
 export default Blog;
